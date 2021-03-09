@@ -21,33 +21,29 @@ final class StackTest extends TestCase
     /** @test */
     public function it_creates_an_empty_stack_variable()
     {
-        $length = 0;
+        $expected = 0;
 
         $this->mockStack->shouldReceive('length')
             ->once()
-            ->andReturn($length);
+            ->andReturn($expected);
 
-        $this->assertEquals($this->mockStack->length(), $length);
+        $this->assertEquals($expected, $this->mockStack->length());
     }
 
     /** @test */
     public function it_can_add_an_item_to_the_stack()
     {
         $item = 'A';
-        $length = 1;
+        $expected = ['A'];
 
         $this->mockStack->shouldReceive('push')
             ->with($item)
             ->once()
             ->andReturn(['A']);
 
-        $this->mockStack->push($item);
+        $stack = $this->mockStack->push($item);
 
-        $this->mockStack->shouldReceive('length')
-            ->once()
-            ->andReturn($length);
-
-        $this->assertEquals($this->mockStack->length(), $length);
+        $this->assertEquals($expected, $stack);
     }
 
     /** @test */
@@ -56,7 +52,7 @@ final class StackTest extends TestCase
         $item1 = 'A';
         $item2 = 'B';
         $item3 = 'C';
-        $length = 2;
+        $expected = ['A', 'B'];
 
         $this->mockStack->shouldReceive('push')
             ->with($item1)
@@ -83,11 +79,9 @@ final class StackTest extends TestCase
             ->once()
             ->andReturn(['A', 'B']);
 
-        $this->mockStack->shouldReceive('length')
-            ->once()
-            ->andReturn($length);
+        $stack = $this->mockStack->pop();
 
-        $this->assertEquals($this->mockStack->length(), $length);
+        $this->assertEquals($expected, $stack);
     }
 
     /** @test */
@@ -115,16 +109,16 @@ final class StackTest extends TestCase
             ->with($item3)
             ->once()
             ->andReturn(['A', 'B', 'C']);
+
+        $this->mockStack->push($item3);
         
         $this->mockStack->shouldReceive('peek')
             ->once()
             ->andReturn($item3);
-
-        $this->mockStack->push($item3);
         
-        $returnedItem = $this->mockStack->peek();
+        $expected = $this->mockStack->peek();
 
-        $this->assertEquals($returnedItem, $item3);
+        $this->assertEquals($expected, $item3);
     }
 
     /** @test */
@@ -136,6 +130,8 @@ final class StackTest extends TestCase
             ->once()
             ->andReturn($isEmpty);
         
-        $this->assertTrue($isEmpty);
+        $expected = $this->mockStack->isEmpty();
+        
+        $this->assertEquals($expected, $isEmpty);
     }
 }
