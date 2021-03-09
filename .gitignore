@@ -1,0 +1,17 @@
+# IDE/code editor settings
+/.idea/
+.vscode
+
+# Composer
+/vendor/
+
+# PHP Environment Variables
+.env
+
+# Node, NPM and Yarn
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Cache
+.phpunit.result.cache
