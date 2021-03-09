@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Tranquility\DataStructures;
 
-use phpDocumentor\Reflection\Types\Boolean;
-
 interface StackInterface
 {
     public function length(): int;
