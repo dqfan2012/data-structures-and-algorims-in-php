@@ -17,6 +17,9 @@
             "Tranquility\\": "src/"
         }
     },
+    "scripts": {
+        "test": "pest"
+    },
     "autoload-dev": {
         "psr-4": {
             "Tranquility\\Tests\\": "tests/"
@@ -24,7 +27,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^9",
-        "pestphp/pest": "^1.0",
+        "pestphp/pest": "^1.16",
         "mockery/mockery": "^1.4"
     }
 }
