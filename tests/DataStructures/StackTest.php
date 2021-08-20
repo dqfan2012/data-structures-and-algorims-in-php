@@ -85,7 +85,7 @@ final class StackTest extends TestCase
     }
 
     /** @test */
-    public function it_reveal_the_top_item_in_the_stack()
+    public function it_reveals_the_top_item_in_the_stack()
     {
         $item1 = 'A';
         $item2 = 'B';
