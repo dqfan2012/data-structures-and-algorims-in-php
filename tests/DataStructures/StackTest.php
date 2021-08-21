@@ -23,11 +23,11 @@ final class StackTest extends TestCase
     {
         $expected = 0;
 
-        $this->mockStack->shouldReceive('length')
+        $this->mockStack->shouldReceive('getLength')
             ->once()
             ->andReturn($expected);
 
-        $this->assertEquals($expected, $this->mockStack->length());
+        $this->assertEquals($expected, $this->mockStack->getLength());
     }
 
     /** @test */
@@ -52,7 +52,6 @@ final class StackTest extends TestCase
         $item1 = 'A';
         $item2 = 'B';
         $item3 = 'C';
-        $expected = ['A', 'B'];
 
         $this->mockStack->shouldReceive('push')
             ->with($item1)
@@ -77,11 +76,11 @@ final class StackTest extends TestCase
         
         $this->mockStack->shouldReceive('pop')
             ->once()
-            ->andReturn(['A', 'B']);
+            ->andReturn('C');
 
-        $stack = $this->mockStack->pop();
+        $expected = $this->mockStack->pop();
 
-        $this->assertEquals($expected, $stack);
+        $this->assertEquals($expected, $item3);
     }
 
     /** @test */
