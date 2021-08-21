@@ -52,7 +52,6 @@ final class StackTest extends TestCase
         $item1 = 'A';
         $item2 = 'B';
         $item3 = 'C';
-        $expected = 'C';
 
         $this->mockStack->shouldReceive('push')
             ->with($item1)
@@ -79,9 +78,9 @@ final class StackTest extends TestCase
             ->once()
             ->andReturn('C');
 
-        $item = $this->mockStack->pop();
+        $expected = $this->mockStack->pop();
 
-        $this->assertEquals($expected, $item);
+        $this->assertEquals($expected, $item3);
     }
 
     /** @test */
