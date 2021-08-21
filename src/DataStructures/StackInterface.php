@@ -6,9 +6,6 @@ namespace Tranquility\DataStructures;
 
 interface StackInterface
 {
-    public function length(): int;
     public function push(mixed $item): array;
-    public function pop(): array;
-    public function peek(): mixed;
-    public function isEmpty(): bool;
+    public function pop(): mixed;
 }
