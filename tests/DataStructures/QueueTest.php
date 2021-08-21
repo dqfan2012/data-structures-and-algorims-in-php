@@ -52,6 +52,7 @@ final class QueueTest extends TestCase
         $item1 = 'A';
         $item2 = 'B';
         $item3 = 'C';
+
         $expected = 'A';
 
         $this->mockQueue->shouldReceive('enqueue')
@@ -77,7 +78,7 @@ final class QueueTest extends TestCase
         
         $this->mockQueue->shouldReceive('dequeue')
             ->once()
-            ->andReturn('A');
+            ->andReturn($item1);
 
         $item = $this->mockQueue->dequeue();
 
