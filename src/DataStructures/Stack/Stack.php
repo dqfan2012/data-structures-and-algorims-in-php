@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tranquility\DataStructures;
+namespace Tranquility\DataStructures\Stack;
 
-class Stack implements StackInterface, CollectionHelperInterface
+use Tranquility\DataStructures\Collection\CollectionInterface;
+
+class Stack implements StackInterface, CollectionInterface
 {
     private $stack;
 

@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tranquility\DataStructures;
+namespace Tranquility\DataStructures\Collection;
 
-interface CollectionHelperInterface
+interface CollectionInterface extends ArrayInterface
 {
     public function getLength(): int;
     public function peek(): mixed;
-    public function isEmpty(): bool;
 }

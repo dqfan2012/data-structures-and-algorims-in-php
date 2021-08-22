@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tranquility\Tests\DataStructures;
+namespace Tranquility\Tests\DataStructures\Stack;
 
 use Mockery;
 use PHPUnit\Framework\TestCase;
-use Tranquility\DataStructures\Stack;
+use Tranquility\DataStructures\Stack\Stack;
 
 final class StackTest extends TestCase
 {
@@ -73,7 +73,7 @@ final class StackTest extends TestCase
             ->andReturn(['A', 'B', 'C']);
 
         $this->mockStack->push($item3);
-        
+
         $this->mockStack->shouldReceive('pop')
             ->once()
             ->andReturn('C');
@@ -110,11 +110,11 @@ final class StackTest extends TestCase
             ->andReturn(['A', 'B', 'C']);
 
         $this->mockStack->push($item3);
-        
+
         $this->mockStack->shouldReceive('peek')
             ->once()
             ->andReturn($item3);
-        
+
         $expected = $this->mockStack->peek();
 
         $this->assertEquals($expected, $item3);
@@ -128,9 +128,9 @@ final class StackTest extends TestCase
         $this->mockStack->shouldReceive('isEmpty')
             ->once()
             ->andReturn($isEmpty);
-        
+
         $expected = $this->mockStack->isEmpty();
-        
+
         $this->assertEquals($expected, $isEmpty);
     }
 }

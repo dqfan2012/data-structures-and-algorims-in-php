@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tranquility\DataStructures;
+namespace Tranquility\DataStructures\Stack;
 
 interface StackInterface
 {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tranquility\Tests\DataStructures;
+namespace Tranquility\Tests\DataStructures\Queue;
 
 use Mockery;
 use PHPUnit\Framework\TestCase;
-use Tranquility\DataStructures\Queue;
+use Tranquility\DataStructures\Queue\Queue;
 
 final class QueueTest extends TestCase
 {
@@ -73,7 +73,7 @@ final class QueueTest extends TestCase
             ->andReturn(['A', 'B', 'C']);
 
         $this->mockQueue->enqueue($item3);
-        
+
         $this->mockQueue->shouldReceive('dequeue')
             ->once()
             ->andReturn($item1);
@@ -110,11 +110,11 @@ final class QueueTest extends TestCase
             ->andReturn(['A', 'B', 'C']);
 
         $this->mockQueue->enqueue($item3);
-        
+
         $this->mockQueue->shouldReceive('peek')
             ->once()
             ->andReturn($item1);
-        
+
         $expected = $this->mockQueue->peek();
 
         $this->assertEquals($expected, $item1);
@@ -128,9 +128,9 @@ final class QueueTest extends TestCase
         $this->mockQueue->shouldReceive('isEmpty')
             ->once()
             ->andReturn($isEmpty);
-        
+
         $expected = $this->mockQueue->isEmpty();
-        
+
         $this->assertEquals($expected, $isEmpty);
     }
 }

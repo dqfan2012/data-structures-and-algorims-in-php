@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tranquility\DataStructures;
+namespace Tranquility\DataStructures\Queue;
 
-class Queue implements QueueInterface, CollectionHelperInterface
+use Tranquility\DataStructures\Collection\CollectionInterface;
+
+class Queue implements QueueInterface, CollectionInterface
 {
     private $queue;
 
