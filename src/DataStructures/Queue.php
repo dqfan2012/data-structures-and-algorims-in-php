@@ -32,7 +32,7 @@ class Queue implements QueueInterface, CollectionHelperInterface
 
     public function peek(): mixed
     {
-        return $this->stack[0];
+        return $this->queue[0];
     }
 
     public function isEmpty(): bool
